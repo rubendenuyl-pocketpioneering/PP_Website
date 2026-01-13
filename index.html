@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pocket Pioneering</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pp: {
+                blue: '#4A6FA5',
+                red: '#E12A2C',
+                green: '#00A676',
+                beige: '#E0D0C1',
+                dark: '#595959',
+                light: '#FFFFFF'
+              }
+            },
+            fontFamily: {
+              sans: ['Lato', 'sans-serif'],
+              heading: ['Raleway', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Smooth transition for fading pages */
+        .page-section {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-pp-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" onclick="showPage('home'); return false;" class="flex items-center space-x-2 group">
+                    <div class="bg-pp-red p-2 rounded-md text-white group-hover:bg-pp-blue transition-colors duration-300">
+                        <i data-lucide="pen-tool" width="24" height="24"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-xl leading-none text-pp-dark tracking-wide uppercase">Pocket</span>
+                        <span class="font-heading font-bold text-xl leading-none text-pp-dark tracking-wide uppercase">Pioneering</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" onclick="showPage('home'); return false;" id="nav-home" class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-red border-b-2 border-pp-red">Home</a>
+                    <a href="#" onclick="showPage('services'); return false;" id="nav-services" class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">Services</a>
+                    <a href="#" onclick="showPage('about'); return false;" id="nav-about" class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">About Me</a>
+                    <a href="#" onclick="showPage('contact'); return false;" id="nav-contact" class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-pp-dark hover:text-pp-blue focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon" width="28" height="28"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" onclick="showPage('home'); toggleMobileMenu(); return false;" class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">Home</a>
+                <a href="#" onclick="showPage('services'); toggleMobileMenu(); return false;" class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">Services</a>
+                <a href="#" onclick="showPage('about'); toggleMobileMenu(); return false;" class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">About Me</a>
+                <a href="#" onclick="showPage('contact'); toggleMobileMenu(); return false;" class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
+        
+        <!-- PAGE: HOME -->
+        <div id="page-home" class="page-section">
+            <!-- Hero Section -->
+            <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://picsum.photos/id/29/1920/1080" alt="Snowy mountains landscape" class="w-full h-full object-cover"/>
+                    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/40"></div>
+                </div>
+
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+                    <div class="max-w-3xl">
+                        <div class="flex items-center space-x-2 mb-6 justify-center sm:justify-start">
+                            <div class="h-1 w-12 bg-pp-blue"></div>
+                            <div class="h-1 w-12 bg-pp-red"></div>
+                        </div>
+                        <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white mb-6 leading-tight">
+                            Navigating Complexity. <br />
+                            <span class="text-pp-beige">Building Solutions.</span>
+                        </h1>
+                        <p class="font-sans text-lg sm:text-2xl text-gray-200 mb-10 leading-relaxed font-light">
+                            The "Swiss Army Knife" for your organization's fuzzy problems. We turn vague challenges into clear insights and tangible results.
+                        </p>
+                        <a href="#" onclick="showPage('contact'); return false;" class="inline-flex items-center px-8 py-4 bg-pp-red hover:bg-red-700 text-white font-heading font-bold uppercase tracking-wider rounded transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                            Start Your Expedition <i data-lucide="arrow-right" class="ml-2" width="20" height="20"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Introduction -->
+            <section class="py-20 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="font-heading font-bold text-3xl text-pp-dark mb-8">Direction & Action</h2>
+                    <p class="text-xl text-pp-dark leading-relaxed font-light">
+                        A better world doesn't just happen; it requires direction and action. But often, organizations know something needs to change without knowing what or how. That’s where <span class="font-bold text-pp-blue">Pocket Pioneering</span> comes in. We focus on the "front end" of innovation—from analysis to Proof of Concept—helping you pave a path through the unknown so you can face the future with confidence.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Why Pocket Pioneering? -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-heading font-bold text-4xl text-pp-dark mb-4">Why Pocket Pioneering?</h2>
+                        <div class="h-1 w-24 bg-pp-blue mx-auto"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <!-- Versatility -->
+                        <div class="bg-white p-8 shadow-lg rounded-sm border-t-4 border-pp-blue hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex justify-center mb-6">
+                                <div class="p-4 bg-pp-blue/10 rounded-full text-pp-blue">
+                                    <i data-lucide="box" width="40" height="40"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-center mb-4 text-pp-dark">Versatility</h3>
+                            <p class="text-pp-dark text-center leading-relaxed">
+                                Like a pocket knife, we bring a diverse set of skills and tools to analyze problems and build solutions.
+                            </p>
+                        </div>
+
+                        <!-- Insight -->
+                        <div class="bg-white p-8 shadow-lg rounded-sm border-t-4 border-pp-red hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex justify-center mb-6">
+                                <div class="p-4 bg-pp-red/10 rounded-full text-pp-red">
+                                    <i data-lucide="eye" width="40" height="40"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-center mb-4 text-pp-dark">Insight</h3>
+                            <p class="text-pp-dark text-center leading-relaxed">
+                                We combine the "maker's" mentality with the wisdom of the "Owl," ensuring we don't just build things, but build the right things.
+                            </p>
+                        </div>
+
+                        <!-- Agility -->
+                        <div class="bg-white p-8 shadow-lg rounded-sm border-t-4 border-pp-green hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex justify-center mb-6">
+                                <div class="p-4 bg-pp-green/10 rounded-full text-pp-green">
+                                    <i data-lucide="zap" width="40" height="40"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-center mb-4 text-pp-dark">Agility</h3>
+                            <p class="text-pp-dark text-center leading-relaxed">
+                                We are your compact companion for the journey—agile, fast, and functional. We don't weigh you down; we help you move forward.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visual Break -->
+            <div class="h-64 overflow-hidden relative">
+                <img src="https://picsum.photos/id/866/1920/600" alt="Mountain tools" class="w-full h-full object-cover opacity-80" />
+                <div class="absolute inset-0 bg-pp-blue/30 mix-blend-multiply"></div>
+            </div>
+        </div>
+
+        <!-- PAGE: SERVICES -->
+        <div id="page-services" class="page-section hidden">
+            <div class="bg-white min-h-screen">
+                <!-- Header -->
+                <div class="bg-pp-dark py-20">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="font-heading font-bold text-4xl sm:text-5xl text-white mb-6">Modular Solutions for Wicked Problems</h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+                            Our services are modular, allowing you to engage us for a single phase or the entire journey. We bridge the gap between abstract strategy and concrete execution.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phases -->
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <div class="grid grid-cols-1 gap-16">
+                        
+                        <!-- Phase 1 -->
+                        <div class="flex flex-col md:flex-row items-stretch bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                            <div class="md:w-1/3 bg-pp-blue p-10 flex flex-col justify-center items-center text-white">
+                                <i data-lucide="search" width="64" height="64" class="mb-6 opacity-80"></i>
+                                <h2 class="font-heading font-bold text-2xl uppercase tracking-widest mb-2">Phase 1</h2>
+                                <h3 class="font-heading font-bold text-3xl text-center">Vision & Strategy</h3>
+                                <span class="mt-2 text-pp-beige font-bold">(The Diagnosis)</span>
+                            </div>
+                            <div class="md:w-2/3 p-10 flex flex-col justify-center">
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-blue/30 inline-block pb-1">Focus</h4>
+                                    <p class="text-gray-600 text-lg">Getting the "Fuzzy" problem sharp.</p>
+                                </div>
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-blue/30 inline-block pb-1">What We Do</h4>
+                                    <p class="text-gray-600">Through deep-dive sessions, value analysis, and context mapping, we help you find calm in the chaos.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-blue/30 inline-block pb-1">The Result</h4>
+                                    <p class="font-bold text-pp-blue text-xl">A clear problem definition, a supported vision, and a strategic direction.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="flex flex-col md:flex-row items-stretch bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                            <div class="md:w-1/3 bg-pp-green p-10 flex flex-col justify-center items-center text-white md:order-last">
+                                <i data-lucide="pen-tool" width="64" height="64" class="mb-6 opacity-80"></i>
+                                <h2 class="font-heading font-bold text-2xl uppercase tracking-widest mb-2">Phase 2</h2>
+                                <h3 class="font-heading font-bold text-3xl text-center">Design</h3>
+                                <span class="mt-2 text-pp-beige font-bold">(The Structure)</span>
+                            </div>
+                            <div class="md:w-2/3 p-10 flex flex-col justify-center">
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-green/30 inline-block pb-1">Focus</h4>
+                                    <p class="text-gray-600 text-lg">Structuring the solution.</p>
+                                </div>
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-green/30 inline-block pb-1">What We Do</h4>
+                                    <p class="text-gray-600">We select the right tools for the job. This involves stakeholder analysis, design sprints, and iterative sketching to translate strategy into requirements.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-green/30 inline-block pb-1">The Result</h4>
+                                    <p class="font-bold text-pp-green text-xl">A Design Brief, functional design, or blueprint for your solution.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="flex flex-col md:flex-row items-stretch bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                            <div class="md:w-1/3 bg-pp-red p-10 flex flex-col justify-center items-center text-white">
+                                <i data-lucide="hammer" width="64" height="64" class="mb-6 opacity-80"></i>
+                                <h2 class="font-heading font-bold text-2xl uppercase tracking-widest mb-2">Phase 3</h2>
+                                <h3 class="font-heading font-bold text-3xl text-center">Create & Build</h3>
+                                <span class="mt-2 text-pp-beige font-bold">(The Creation)</span>
+                            </div>
+                            <div class="md:w-2/3 p-10 flex flex-col justify-center">
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-red/30 inline-block pb-1">Focus</h4>
+                                    <p class="text-gray-600 text-lg">Making the solution tangible.</p>
+                                </div>
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-red/30 inline-block pb-1">What We Do</h4>
+                                    <p class="text-gray-600">We don't just advise; we build. From prototyping and tool creation to writing strategic documents and visualizations.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-pp-dark text-lg uppercase mb-2 border-b border-pp-red/30 inline-block pb-1">The Result</h4>
+                                    <p class="font-bold text-pp-red text-xl">A Proof of Concept (PoC), Prototype, or MVP that works and adds immediate value.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philosophy Section -->
+                <div class="bg-pp-beige/30 py-20">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="font-heading font-bold text-3xl text-pp-dark mb-8">Our Philosophy</h2>
+                        <p class="text-lg text-pp-dark leading-relaxed">
+                            We work <span class="italic font-bold">with</span> you, not just for you. We believe the solution often already exists within your organization's latent knowledge. By listening and co-creating, we ensure the solution is understood and embraced by the people who will use it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE: ABOUT -->
+        <div id="page-about" class="page-section hidden">
+            <div class="bg-white">
+                <!-- Hero -->
+                <div class="relative h-96">
+                    <img src="https://picsum.photos/id/449/1920/800" alt="Explorer in nature" class="w-full h-full object-cover grayscale opacity-90"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 md:p-20">
+                        <div class="max-w-7xl mx-auto">
+                            <h1 class="font-heading font-extrabold text-5xl text-white mb-2">The Pocket Pioneer</h1>
+                            <div class="h-2 w-32 bg-pp-red"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <div class="flex flex-col lg:flex-row gap-16">
+                        
+                        <!-- Main Story Column -->
+                        <div class="lg:w-2/3">
+                            <div class="prose prose-lg max-w-none text-pp-dark">
+                                <h2 class="font-heading font-bold text-3xl mb-6 text-pp-blue flex items-center">
+                                    <i data-lucide="mountain" class="mr-3"></i> The Story
+                                </h2>
+                                <p class="mb-6 leading-relaxed text-lg">
+                                    Imagine you are in a hut in the valley. You know the old ways of working aren't effective anymore, but you don't know which new path to take. How do you prepare? Do you pack every heavy tool you own? No. You travel light. You take a compact toolset that allows you to adapt quickly and change direction.
+                                </p>
+                                <p class="mb-8 leading-relaxed font-bold text-lg border-l-4 border-pp-green pl-6 italic">
+                                    That is the essence of Pocket Pioneering. It is about being the Explorer and the Adventurer who prepares generally so they can solve specific problems as they arise.
+                                </p>
+                                <p class="leading-relaxed text-lg">
+                                    It is the "getting stuff done" mindset that helps you pioneer a new way forward. We don't bring the entire factory; we bring the essential tools to help you carve out the path.
+                                </p>
+                            </div>
+                            
+                            <div class="mt-16 pt-10 border-t border-gray-200">
+                                <h2 class="font-heading font-bold text-3xl mb-6 text-pp-blue flex items-center">
+                                    <i data-lucide="compass" class="mr-3"></i> Meet Ruben den Uyl
+                                </h2>
+                                <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-pp-blue shadow-sm">
+                                    <p class="text-lg leading-relaxed text-pp-dark">
+                                        I founded Pocket Pioneering to help organizations navigate this complexity. My strength lies in <span class="font-bold">versatility</span>—combining strategic insight with a hands-on maker's mentality. I focus on the "why" as much as the "what," ensuring that we don't just solve problems, but we solve them for the right reasons.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar / Visual Column -->
+                        <div class="lg:w-1/3 space-y-8">
+                            <div class="bg-pp-beige p-1 rounded shadow-lg rotate-2 hover:rotate-0 transition-transform duration-500">
+                                <img src="https://picsum.photos/id/338/600/800" alt="Ruben den Uyl" class="w-full h-auto rounded grayscale hover:grayscale-0 transition-all duration-500"/>
+                                <div class="p-4 text-center">
+                                    <p class="font-heading font-bold text-pp-dark">Ruben den Uyl</p>
+                                    <p class="text-sm text-gray-600">Founder & Pioneer</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-pp-dark text-white p-8 rounded shadow-lg">
+                                <h3 class="font-heading font-bold text-xl mb-4 text-pp-beige">Core Values</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-pp-red rounded-full mr-3"></span>
+                                        Versatility
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-pp-blue rounded-full mr-3"></span>
+                                        Pragmatism
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-pp-green rounded-full mr-3"></span>
+                                        Adaptability
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-pp-beige rounded-full mr-3"></span>
+                                        Creation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE: CONTACT -->
+        <div id="page-contact" class="page-section hidden">
+            <div class="bg-gray-50 min-h-[90vh] py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <div class="text-center mb-16">
+                        <h1 class="font-heading font-extrabold text-4xl sm:text-5xl text-pp-dark mb-4">Ready to Find Your Path?</h1>
+                        <p class="text-xl text-gray-600">Let’s discuss how we can turn your complex challenges into concrete opportunities.</p>
+                    </div>
+            
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                        
+                        <!-- Contact Info Card -->
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <div class="bg-pp-blue p-6">
+                                <h2 class="font-heading font-bold text-2xl text-white">Contact Information</h2>
+                            </div>
+                            <div class="p-8 space-y-8">
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-blue/10 p-3 rounded-full">
+                                        <i data-lucide="mail" class="text-pp-blue" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Email</p>
+                                        <a href="mailto:ruben.denuyl@pocketpioneering.com" class="text-lg text-pp-dark font-medium hover:text-pp-red transition-colors">
+                                            ruben.denuyl@pocketpioneering.com
+                                        </a>
+                                    </div>
+                                </div>
+            
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-green/10 p-3 rounded-full">
+                                        <i data-lucide="phone" class="text-pp-green" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Phone</p>
+                                        <a href="tel:0610223482" class="text-lg text-pp-dark font-medium hover:text-pp-red transition-colors">
+                                            06-10223482
+                                        </a>
+                                    </div>
+                                </div>
+            
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-red/10 p-3 rounded-full">
+                                        <i data-lucide="map-pin" class="text-pp-red" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Office Address</p>
+                                        <p class="text-lg text-pp-dark font-medium">
+                                            Rentmeesterslaan 87<br/>
+                                            1181DR Amstelveen
+                                        </p>
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+            
+                        <!-- Business Details Card -->
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <div class="bg-pp-dark p-6">
+                                <h2 class="font-heading font-bold text-2xl text-white">Business Details & Connect</h2>
+                            </div>
+                            <div class="p-8 space-y-8 flex flex-col h-full justify-between">
+                                
+                                <div class="space-y-8">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 bg-gray-100 p-3 rounded-full">
+                                            <i data-lucide="building" class="text-gray-600" width="24" height="24"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Chamber of Commerce (KVK)</p>
+                                            <p class="text-lg text-pp-dark font-medium">
+                                                99283824
+                                            </p>
+                                        </div>
+                                    </div>
+            
+                                    <div class="border-t border-gray-100 pt-8">
+                                        <p class="text-gray-600 mb-4">
+                                            Interested in my professional background or want to connect on social media?
+                                        </p>
+                                        <a href="#" class="flex items-center justify-center w-full px-6 py-4 border-2 border-pp-blue text-pp-blue font-bold rounded hover:bg-pp-blue hover:text-white transition-colors duration-300">
+                                            <i data-lucide="linkedin" class="mr-2" width="20" height="20"></i> Connect on LinkedIn
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-pp-beige/30 p-4 rounded text-sm text-pp-dark italic">
+                                    "We don't just build things, but build the right things."
+                                </div>
+            
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <!-- Bottom CTA -->
+                    <div class="mt-20 text-center">
+                        <div class="inline-block p-1 bg-gradient-to-r from-pp-blue via-pp-red to-pp-green rounded-lg">
+                            <div class="bg-white rounded px-8 py-6">
+                                <h3 class="font-heading font-bold text-xl mb-2">Not sure where to start?</h3>
+                                <p class="mb-4 text-gray-600">Let's schedule a brief coffee chat to explore your needs.</p>
+                                <button onclick="window.location.href='mailto:ruben.denuyl@pocketpioneering.com'" class="text-pp-blue font-bold hover:text-pp-dark flex items-center mx-auto">
+                                    Book an introduction <i data-lucide="arrow-right" class="ml-2" width="16" height="16"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-pp-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <h3 class="font-heading font-bold text-2xl">Pocket Pioneering</h3>
+                    <p class="text-gray-300 text-sm max-w-xs">
+                        Navigating complexity. Building solutions. Your compact companion for organizational challenges.
+                    </p>
+                </div>
+
+                <!-- Links Column -->
+                <div class="space-y-4">
+                    <h4 class="font-heading font-bold text-lg text-pp-beige">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="showPage('home'); return false;" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" onclick="showPage('about'); return false;" class="text-gray-300 hover:text-white transition-colors">About Me</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="space-y-4">
+                    <h4 class="font-heading font-bold text-lg text-pp-beige">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2 text-gray-300 text-sm">
+                            <i data-lucide="mail" class="text-pp-beige" width="16" height="16"></i>
+                            <span>ruben.denuyl@pocketpioneering.com</span>
+                        </li>
+                        <li class="flex items-start space-x-2 text-gray-300 text-sm">
+                            <i data-lucide="map-pin" class="text-pp-beige mt-1" width="16" height="16"></i>
+                            <span>Rentmeesterslaan 87, 1181DR Amstelveen</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-300 text-sm">
+                            <i data-lucide="linkedin" class="text-pp-beige" width="16" height="16"></i>
+                            <a href="#" class="hover:text-white hover:underline">LinkedIn Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-xs">© 2024 Pocket Pioneering. All rights reserved.</p>
+                <p class="text-gray-400 text-xs mt-2 md:mt-0">KVK: 99283824</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navigation Logic
+        function showPage(pageId) {
+            // 1. Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            // 2. Show requested page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // 3. Update Active Navigation State
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                // Reset styles to default
+                link.classList.remove('text-pp-red', 'border-b-2', 'border-pp-red');
+                link.classList.add('text-pp-dark', 'hover:text-pp-blue');
+            });
+
+            // Set active style
+            const activeLink = document.getElementById('nav-' + pageId);
+            if (activeLink) {
+                activeLink.classList.remove('text-pp-dark', 'hover:text-pp-blue');
+                activeLink.classList.add('text-pp-red', 'border-b-2', 'border-pp-red');
+            }
+
+            // 4. Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            
+            // Re-render icons just in case (optional)
+            lucide.createIcons();
+        }
+
+        // Set initial page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
