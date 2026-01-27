@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Pocket Pioneering</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pp: {
+                            blue: '#4A6FA5',
+                            red: '#E12A2C',
+                            green: '#00A676',
+                            beige: '#E0D0C1',
+                            dark: '#595959',
+                            grey: '#c2c0c0',
+                            light: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 text-pp-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-4 group">
+                    <img src="images/logo.png" alt="Pocket Pioneering Logo"
+                        class="h-14 w-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
+                    <div class="flex flex-col">
+                        <span
+                            class="font-heading font-bold text-xl leading-none text-pp-dark tracking-wide uppercase">Pocket</span>
+                        <span
+                            class="font-heading font-bold text-xl leading-none text-pp-dark tracking-wide uppercase">Pioneering</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" id="nav-home"
+                        class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">Home</a>
+                    <a href="services.html" id="nav-services"
+                        class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">Services</a>
+                    <a href="about.html" id="nav-about"
+                        class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-dark hover:text-pp-blue">About</a>
+                    <a href="contact.html" id="nav-contact"
+                        class="nav-link font-heading font-bold text-sm tracking-wide uppercase transition-colors duration-200 text-pp-red border-b-2 border-pp-red">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-pp-dark hover:text-pp-blue focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon" width="28" height="28"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">Home</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">Services</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-dark hover:text-pp-blue hover:bg-gray-50">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-bold font-heading uppercase text-pp-blue bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
+
+        <div id="page-contact" class="page-section">
+            <div class="bg-gray-50 min-h-[90vh] py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    <div class="text-center mb-16">
+                        <h1 class="font-heading font-extrabold text-4xl sm:text-5xl text-pp-dark mb-4">Ready to Find
+                            Your Path?</h1>
+                        <p class="text-xl text-gray-600">Let’s discuss how I can turn your complex challenges into
+                            concrete opportunities.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+                        <!-- Contact Info Card -->
+                        <div
+                            class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <div class="bg-pp-blue p-6">
+                                <h2 class="font-heading font-bold text-2xl text-white">Contact Information</h2>
+                            </div>
+                            <div class="p-8 space-y-8">
+
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-blue/10 p-3 rounded-full">
+                                        <i data-lucide="mail" class="text-pp-blue" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Email</p>
+                                        <a href="mailto:ruben.denuyl@pocketpioneering.com"
+                                            class="text-lg text-pp-dark font-medium hover:text-pp-red transition-colors">
+                                            ruben.denuyl@pocketpioneering.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-green/10 p-3 rounded-full">
+                                        <i data-lucide="phone" class="text-pp-green" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Phone</p>
+                                        <a href="tel:0610223482"
+                                            class="text-lg text-pp-dark font-medium hover:text-pp-red transition-colors">
+                                            06-10223482
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-pp-red/10 p-3 rounded-full">
+                                        <i data-lucide="map-pin" class="text-pp-red" width="24" height="24"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Office
+                                            Address</p>
+                                        <p class="text-lg text-pp-dark font-medium">
+                                            Rentmeesterslaan 87<br />
+                                            1181DR Amstelveen
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Business Details Card -->
+                        <div
+                            class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <div class="bg-pp-dark p-6">
+                                <h2 class="font-heading font-bold text-2xl text-white">Business Details & Connect</h2>
+                            </div>
+                            <div class="p-8 space-y-8 flex flex-col h-full justify-between">
+
+                                <div class="space-y-8">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 bg-gray-100 p-3 rounded-full">
+                                            <i data-lucide="building" class="text-gray-600" width="24" height="24"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Chamber
+                                                of Commerce (KVK)</p>
+                                            <p class="text-lg text-pp-dark font-medium">
+                                                99283824
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-t border-gray-100 pt-8">
+                                        <p class="text-gray-600 mb-4">
+                                            Interested in my professional background or want to connect on social media?
+                                        </p>
+                                        <a href="#"
+                                            class="flex items-center justify-center w-full px-6 py-4 border-2 border-pp-blue text-pp-blue font-bold rounded hover:bg-pp-blue hover:text-white transition-colors duration-300">
+                                            <i data-lucide="linkedin" class="mr-2" width="20" height="20"></i> Connect
+                                            on LinkedIn
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="bg-pp-beige/30 p-4 rounded text-sm text-pp-dark italic">
+                                    "I don't just build things, I build the right things."
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom CTA -->
+                    <div class="mt-20 text-center">
+                        <div class="inline-block p-1 bg-gradient-to-r from-pp-blue via-pp-red to-pp-green rounded-lg">
+                            <div class="bg-white rounded px-8 py-6">
+                                <h3 class="font-heading font-bold text-xl mb-2">Not sure where to start?</h3>
+                                <p class="mb-4 text-gray-600">Let's schedule a brief coffee chat to explore your needs.
+                                </p>
+                                <button onclick="window.location.href='mailto:ruben.denuyl@pocketpioneering.com'"
+                                    class="text-pp-blue font-bold hover:text-pp-dark flex items-center mx-auto">
+                                    Book an introduction <i data-lucide="arrow-right" class="ml-2" width="16"
+                                        height="16"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-pp-blue text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="images/logo.png" alt="Pocket Pioneering Logo" class="h-10 w-auto" />
+                        <h3 class="font-heading font-bold text-2xl">Pocket Pioneering</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm max-w-xs">
+                        Navigating complexity. Building solutions. Your compact companion for organizational challenges.
+                    </p>
+                </div>
+
+                <!-- Links Column -->
+                <div class="space-y-4">
+                    <h4 class="font-heading font-bold text-lg text-pp-white">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-white font-bold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="space-y-4">
+                    <h4 class="font-heading font-bold text-lg text-pp-white">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2 text-gray-300 text-sm">
+                            <i data-lucide="mail" class="text-pp-white" width="16" height="16"></i>
+                            <a href="mailto:ruben.denuyl@pocketpioneering.com"
+                                class="hover:text-white hover:underline">ruben.denuyl@pocketpioneering.com</a>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-300 text-sm">
+                            <i data-lucide="linkedin" class="text-pp-white" width="16" height="16"></i>
+                            <a href="https://www.linkedin.com/in/rubendenuyl/"
+                                class="hover:text-white hover:underline">LinkedIn Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white-600 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-xs">© 2026 Pocket Pioneering. All rights reserved.</p>
+                <p class="text-gray-400 text-xs mt-2 md:mt-0">KVK: 99283824</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>
