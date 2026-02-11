@@ -138,6 +138,8 @@
             background: white;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0);
+            /* Sharpness */
         }
 
         .category-hub:hover {
@@ -168,11 +170,12 @@
         .service-node {
             position: absolute;
             z-index: 30;
-            transform: translate(calc(var(--parallax-x) * var(--depth)), calc(var(--parallax-y) * var(--depth)));
+            transform: translate3d(calc(var(--parallax-x) * var(--depth)), calc(var(--parallax-y) * var(--depth)), 0);
             will-change: transform;
             transition: transform 0.3s ease-out;
             backface-visibility: hidden;
             transform-style: preserve-3d;
+            -webkit-font-smoothing: subpixel-antialiased;
         }
 
         .service-inner {
@@ -188,9 +191,10 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             opacity: 0.4;
             /* Default faded */
-            transform: translateZ(0);
+            transform: translate3d(0, 0, 0);
             /* Hardware acceleration for sharpness */
             backface-visibility: hidden;
+            -webkit-font-smoothing: subpixel-antialiased;
         }
 
         /* Proximity Active State */
@@ -443,10 +447,10 @@
             const h = canvas.offsetHeight;
             const isMobile = w < 768;
 
-            // Journey Positions (Aligned to images)
+            // Journey Positions (Aligned to images) - SHIFTED DOWN 100px to prevent header clipping
             const hubPoints = isMobile ?
                 [{ x: w / 2, y: 150 }, { x: w / 2, y: 450 }, { x: w / 2, y: 750 }, { x: w / 2, y: 1050 }] :
-                [{ x: w * 0.3, y: 220 }, { x: w * 0.6, y: 400 }, { x: w * 0.4, y: 650 }, { x: w * 0.7, y: 820 }];
+                [{ x: w * 0.3, y: 320 }, { x: w * 0.6, y: 500 }, { x: w * 0.4, y: 750 }, { x: w * 0.7, y: 920 }];
 
             // Render Path
             let d = `M ${hubPoints[0].x} ${hubPoints[0].y}`;
